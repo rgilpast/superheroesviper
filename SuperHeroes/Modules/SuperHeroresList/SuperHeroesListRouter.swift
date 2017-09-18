@@ -86,6 +86,6 @@ fileprivate struct SuperHeroesListRouterConstants {
     
     static let superHeroesListViewId = "SuperHeroesListViewController"
     static let superHeroesListSoryboardId = "Main"
-    static let baseURL: String = "  "
+    static let baseURL: String = "https://api.myjson.com/"
 
 }
