@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings(Base - en)
+  SuperHeroes
+
+  Created by Rafael Gil Pastor on 22/8/17.
+  Copyright © 2017 Rafael Gil. All rights reserved.
+*/
+"SH_APP_TITLE" = "Super Heroes";
+"SH_OK" = "Aceptar";
+"SH_NO_AVAILABLE" = "There are no available super heroes. They should be very busy.";
+"SH_DETAIL_TITLE" = "Detail";
+"SH_DETAIL_BACK" = "< Back";
+"SH_REAL_NAME_TITLE" = "Real name: ";
+"SH_HEIGHT_TITLE" = "Height: ";
+"SH_POWER_PROPERTIES_DESCRIPTION" = "Power";
+"SH_ABILITIES_PROPERTIES_DESCRIPTION" = "Abilities";
+"SH_GROUPS_PROPERTIES_DESCRIPTION" = "Groups";

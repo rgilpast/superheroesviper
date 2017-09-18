@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Super Heroes List View Controller-->
+        <scene sceneID="WT5-Sz-CBF">
+            <objects>
+                <viewController storyboardIdentifier="SuperHeroesListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BDu-jt-F9I" userLabel="Super Heroes List View Controller" customClass="SuperHeroesListViewController" customModule="SuperHeroes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EEO-cA-Gg4"/>
+                        <viewControllerLayoutGuide type="bottom" id="NXc-eT-ctX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="opY-Wd-EZW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Qf-Uy-PfB">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="6Qf-Uy-PfB" secondAttribute="trailing" id="CrP-fv-ypZ"/>
+                            <constraint firstItem="NXc-eT-ctX" firstAttribute="top" secondItem="6Qf-Uy-PfB" secondAttribute="bottom" id="Lms-5B-yOT"/>
+                            <constraint firstItem="6Qf-Uy-PfB" firstAttribute="top" secondItem="EEO-cA-Gg4" secondAttribute="bottom" id="Nq6-cZ-7mD"/>
+                            <constraint firstItem="6Qf-Uy-PfB" firstAttribute="leading" secondItem="opY-Wd-EZW" secondAttribute="leading" id="ROS-Yh-xjQ"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="qy9-wI-cQO"/>
+                    <connections>
+                        <outlet property="tableView" destination="6Qf-Uy-PfB" id="F0D-tl-gFO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1te-dF-R9L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-583.20000000000005" y="11.244377811094454"/>
+        </scene>
+        <!--Super Hero Detail View Controller-->
+        <scene sceneID="vor-hO-FxO">
+            <objects>
+                <viewController storyboardIdentifier="SuperHeroDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="x2o-ID-29R" userLabel="Super Hero Detail View Controller" customClass="SuperHeroDetailViewController" customModule="SuperHeroes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jeN-Nu-8ys"/>
+                        <viewControllerLayoutGuide type="bottom" id="IKY-yd-Oc4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NcO-wZ-Dp1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kiW-ib-Mpg" userLabel="Super Heore Detail Table View">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableFooterView" clipsSubviews="YES" contentMode="scaleToFill" id="kmP-Hg-V5h" userLabel="Header View" customClass="SuperHeroDetailHeaderView" customModule="SuperHeroes" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="248"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kiW-ib-Mpg" firstAttribute="top" secondItem="jeN-Nu-8ys" secondAttribute="bottom" id="8TJ-Cy-gNO"/>
+                            <constraint firstAttribute="trailing" secondItem="kiW-ib-Mpg" secondAttribute="trailing" id="8tA-oI-Ci4"/>
+                            <constraint firstItem="kiW-ib-Mpg" firstAttribute="leading" secondItem="NcO-wZ-Dp1" secondAttribute="leading" id="WqZ-fw-grf"/>
+                            <constraint firstItem="IKY-yd-Oc4" firstAttribute="top" secondItem="kiW-ib-Mpg" secondAttribute="bottom" id="q2q-BC-OYD"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <connections>
+                        <outlet property="superHeroHeaderView" destination="kmP-Hg-V5h" id="yz0-PV-b24"/>
+                        <outlet property="tableView" destination="kiW-ib-Mpg" id="KRt-Hp-Yvz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A14-Sa-ELv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="184.80000000000001" y="10.344827586206897"/>
+        </scene>
+    </scenes>
+</document>
