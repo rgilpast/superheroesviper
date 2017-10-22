@@ -8,6 +8,6 @@ target 'SuperHeroes' do
 
   # Pods for SuperHeroes
 
-    pod ‘DisplaySwitcher’, '~> 1.0’
+    pod 'DisplaySwitcher', '~> 1.0'
 
 end
