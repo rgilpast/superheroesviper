@@ -12,7 +12,8 @@ import UIKit
 public typealias AlertMessageCompletion = () -> ()
 
 public protocol AlertMessageProtocol {
-    
+
+    func showAlertMessage(fromView: UIViewController, error: Error?, completion: AlertMessageCompletion?)
 }
 
 public extension AlertMessageProtocol {

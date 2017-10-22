@@ -1,8 +1,8 @@
 //
-//  BookCell.swift
+//  SuperHeroTileCell.swift
 //  SuperHeroes
 //
-//  Created by Rafael Gil Pastor on 22/8/17.
+//  Created by Rafael Gil Pastor on 30/9/17.
 //  Copyright © 2017 Rafael Gil. All rights reserved.
 //
 
@@ -10,16 +10,16 @@ import Foundation
 import UIKit
 
 
-public class SuperHeroCell: UITableViewCell
+public class SuperHeroTileCell: UICollectionViewCell
 {
-    static let identifier: String = "SuperHeroCell"
-    
+    static let identifier: String = "SuperHeroTileCell"
+
     lazy var name: UILabel = {
         var label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: UIFont.systemFontSize)
-        label.textColor = UIColor.darkText
-        label.textAlignment = .left
+        label.textColor = UIColor.white
+        label.textAlignment = .center
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 0
         return label
@@ -33,32 +33,33 @@ public class SuperHeroCell: UITableViewCell
         heroImage.image = UIImage(named: "generic_superheroe")
         return heroImage
     }()
-    
-    public init() {
-        super.init(style: .default, reuseIdentifier: SuperHeroCell.identifier)
-        setupCell()
-    }
-    
-    public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: .default, reuseIdentifier: SuperHeroCell.identifier)
-        setupCell()
-    }
-    
+
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupCell()
     }
-    
+
+    public override init(frame: CGRect) {
+        super.init(frame: .zero)
+        setupCell()
+    }
+
     public override func awakeFromNib() {
         super.awakeFromNib()
         setupCell()
     }
-    
+
+    public override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
+    }
+}
+
+extension SuperHeroTileCell: SuperHeroCellProtocol{
+
     public func bindHero(hero: SuperHeroViewEntity?, presenter: SuperHeroesListPresenterProtocol?)
     {
         name.text =  hero?.name
         name.sizeToFit()
-        
+
         presenter?.askForHeroImage(hero: hero, onCompletion: {[weak self] (imageData) -> (Void) in
             if let data = imageData
             {
@@ -66,43 +67,42 @@ public class SuperHeroCell: UITableViewCell
             }
         })
     }
+
+    public static func preferredHeight() -> CGFloat {
+        return SuperHeroTileCellConstants.preferredCellHeight
+    }
 }
 
-private extension SuperHeroCell {
-    
+private extension SuperHeroTileCell {
+
     func setupCell() {
-        
-        selectionStyle = .none
-        accessoryType = .none
+
         clipsToBounds = true
-        
+
         contentView.addSubview(thumbnail)
         contentView.addSubview(name)
 
         setupThumbnail()
         setupName()
     }
-    
+
     func setupThumbnail() {
         thumbnail.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         thumbnail.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
-        thumbnail.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: SuperHeroCellConstants.thumbnailLeftMargin).isActive = true
-        
-        thumbnail.heightAnchor.constraint(equalToConstant: SuperHeroCellConstants.thumbnailHeight).isActive = true
-        thumbnail.widthAnchor.constraint(equalTo: thumbnail.heightAnchor, multiplier: 1).isActive = true
+        thumbnail.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
+        thumbnail.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
     }
-    
+
     func setupName() {
-        name.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        name.leftAnchor.constraint(equalTo: thumbnail.rightAnchor, constant: SuperHeroCellConstants.nameMarginSize).isActive = true
-        name.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: SuperHeroCellConstants.nameMarginSize).isActive = true
+        name.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: SuperHeroTileCellConstants.nameMarginSize).isActive = true
+        name.leftAnchor.constraint(equalTo: thumbnail.rightAnchor, constant: SuperHeroTileCellConstants.nameMarginSize).isActive = true
+        name.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: SuperHeroTileCellConstants.nameMarginSize).isActive = true
         name.setContentCompressionResistancePriority(1000, for: .vertical)
         name.setContentHuggingPriority(1000, for: .vertical)
     }
 }
 
-private struct SuperHeroCellConstants {
+private struct SuperHeroTileCellConstants {
     static let nameMarginSize: CGFloat = 16.0
-    static let thumbnailLeftMargin: CGFloat = 0
-    static let thumbnailHeight: CGFloat = 96.0
+    static let preferredCellHeight: CGFloat = 140.0
 }

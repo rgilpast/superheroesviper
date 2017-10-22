@@ -9,14 +9,16 @@
 import Foundation
 import UIKit
 
-public protocol TableLoadingIndicatorProtocol: LoadingIndicatorProtocol {
+public protocol ListLoadingIndicatorProtocol:LoadingIndicatorProtocol {
     
-    var tableView: UITableView? { get }
+    var listView: UIScrollView? { get }
     var loadingIndicator: UIRefreshControl { get }
+
+    func reloadListData()
 }
 
 //MARK : Loading Indicator
-public extension TableLoadingIndicatorProtocol
+public extension ListLoadingIndicatorProtocol
 {
     func showLoadingIndicator() {
         //show loading indicator only if it isn´t displaying
@@ -27,7 +29,7 @@ public extension TableLoadingIndicatorProtocol
     func hideLoadingIndicator() {
         //hide loading indicator only if it is still displaying
         if loadingIndicator.isRefreshing {
-            tableView?.reloadData()
+            self.reloadListData()
             loadingIndicator.endRefreshing()
         }
     }

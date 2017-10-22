@@ -56,5 +56,5 @@ public class SuperHeroesListRepository: SuperHeroesListRepositoryProtocol {
 }
 
 fileprivate struct SuperHeroesListRepositoryConstants {
-    static let heroesResource: String = "bins/bvyob"
+    static let heroesResource: String = "bins/mksp1"
 }
