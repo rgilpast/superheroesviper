@@ -256,19 +256,11 @@
 		0C71210C1F054D79005A84AA /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				0C86C58B1F06646900C04A04 /* Entities */,
 				0C71210D1F054DA0005A84AA /* BookDetailInteractor.swift */,
 				0C71210E1F054DA0005A84AA /* BookDetailRepository.swift */,
 				0C634DEA1F0A75D900EFAB96 /* SuperHeroDetailDataSource.swift */,
 			);
 			path = Domain;
-			sourceTree = "<group>";
-		};
-		0C86C58B1F06646900C04A04 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entities;
 			sourceTree = "<group>";
 		};
 		0C86C58E1F066D7E00C04A04 /* Entities */ = {
