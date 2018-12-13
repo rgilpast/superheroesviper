@@ -1,4 +1,16 @@
-# SuperHeroes README
+# SuperHeroes README (English)
+
+Sample for showing a super heroes character´s list from url: https://api.myjson.com/bins/bvyob
+
+VIPER is used as design pattern.
+
+Ths list shows the heroes received from a call request of the above url. Tapping on any of them, a detail view of chosen heroe is shown.
+
+The not use of third party libraries is intended
+
+Minimun iOS version: 10.x
+
+# SuperHeroes README (Castellano)
 
 Ejemplo de consulta de una lista de super héroes a través de la url: https://api.myjson.com/bins/bvyob
 
